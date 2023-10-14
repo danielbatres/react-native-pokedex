@@ -16,3 +16,7 @@ export async function getPokemonDetailsByUrlApi(url) {
     throw error;
   }
 }
+
+export async function getPokemonDetailsApi(id) {
+  return getPokemonDetailsByUrlApi(`${API_HOST}/pokemon/${id}`);
+}
