@@ -1,9 +1,9 @@
 import { API_HOST } from "../utils/constants";
 
-export async function getPokemonsApi() {
+export async function getPokemonsApi(endpointUrl) {
   const url = `${API_HOST}/pokemon?limit=20&offset=0`;
 
-  return await getPokemonDetailsByUrlApi(url);
+  return await getPokemonDetailsByUrlApi(endpointUrl || url);
 }
 
 export async function getPokemonDetailsByUrlApi(url) {
