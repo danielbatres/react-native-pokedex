@@ -1,6 +1,7 @@
 import { SafeAreaView, Text } from "react-native";
 import React, { useState, useEffect } from 'react'
 import { getPokemonsApi, getPokemonDetailsByUrlApi } from "../api/pokemon";
+import { PokemonList } from "../components/PokemonList";
 
 function Pokedex() {
   const [pokemons, setPokemons] = useState([]);
@@ -37,7 +38,7 @@ function Pokedex() {
 
   return (
     <SafeAreaView>
-      <Text>Pokedex</Text>
+      <PokemonList pokemons={pokemons} />
     </SafeAreaView>
   )
 }
