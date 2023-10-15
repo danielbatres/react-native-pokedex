@@ -3,9 +3,11 @@ import React, { useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { user, userDetails } from '../../utils/userDB'
+import useAuth from '../../hooks/useAuth'
 
 function LoginForm() {
   const [error, setError] = useState('');
+  const { login } = useAuth();
 
   const formik = useFormik({
     initialValues: initialValues(),
@@ -17,6 +19,8 @@ function LoginForm() {
 
       if (username !== user.username || password !== user.password) {
         setError("The data entered is not valid");
+      } else {
+        login(userDetails)
       }
     }
   });
