@@ -15,12 +15,20 @@ export async function getPokemonFavoriteApi() {
 export async function addPokemonFavoriteApi(id) {
   try {
     const favorites = await getPokemonFavoriteApi();
-
-    if (favorites.includes(id)) return;
     
     favorites.push(id);
 
     await AsyncStorage.setItem(FAVORITE_STORAGE, JSON.stringify(favorites));
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function isPokemonFavoriteApi(id) {
+  try {
+    const response = await getPokemonFavoriteApi();
+
+    return includes(response, id);
   } catch (error) {
     throw error;
   }

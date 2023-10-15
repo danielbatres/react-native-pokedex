@@ -1,5 +1,5 @@
 import { SafeAreaView, Text, Button } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { getPokemonFavoriteApi } from '../api/favorite'
 
 function Favorites() {
