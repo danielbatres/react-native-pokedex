@@ -1,12 +1,17 @@
-import { SafeAreaView, Text } from "react-native";
+import { View, Text } from "react-native";
 import React from 'react'
+import { LoginForm } from "../components/Auth/LoginForm";
+import { UserData } from "../components/Auth/UserData";
 
 function Account() {
+  const auth = null;
+
   return (
-    <SafeAreaView>
+    <View>
+        {auth ? <UserData /> : <LoginForm />}
       <Text>Account</Text>
-    </SafeAreaView>
-  )
+    </View>
+  );
 }
 
 export { Account };
