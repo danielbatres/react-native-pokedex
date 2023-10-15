@@ -1,7 +1,7 @@
 import { SafeAreaView, Text } from 'react-native'
 import React from 'react'
 
-function Favorite() {
+function Favorites() {
   return (
     <SafeAreaView>
       <Text>Favorites</Text>
@@ -9,4 +9,4 @@ function Favorite() {
   )
 }
 
-export { Favorite }
+export { Favorites }
