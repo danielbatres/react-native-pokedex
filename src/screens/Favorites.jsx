@@ -4,6 +4,7 @@ import { getPokemonFavoriteApi } from '../api/favorite'
 import { getPokemonDetailsApi } from '../api/pokemon'
 import useAuth from '../hooks/useAuth'
 import { PokemonList  } from '../components/PokemonList'
+import { NoLogged } from '../components/NoLogged'
 
 function Favorites() {
   const [pokemons, setPokemons] = useState([]);
@@ -34,7 +35,7 @@ function Favorites() {
     }
   }, [auth, pokemons]);
 
-  return !auth ? <Text>User not logged in</Text> : <PokemonList pokemons={pokemons} />
+  return !auth ? <NoLogged /> : <PokemonList pokemons={pokemons} />
 }
 
 export { Favorites }
